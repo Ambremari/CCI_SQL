@@ -1,1 +1,122 @@
+DROP TABLE CompositionCmd;
+DROP TABLE Factures;
+DROP TABLE BonsAchats;
+DROP TABLE Commandes;
+DROP TABLE Clients;
+DROP TABLE PointsRelais;
+DROP TABLE Produits;
+DROP TABLE Types;
+DROP TABLE Conseillers;
+DROP TABLE FraisDePort;
+DROP TABLE CodesPostaux;
+
+CREATE TABLE CodesPostaux(
+  CP decimal(5)
+CONSTRAINT PK_CodesPostaux PRIMARY KEY,
+  Ville Char Varying (20) 
+);
+
+CREATE TABLE FraisDePort(
+  PaysRel Char Varying (20)
+CONSTRAINT PK_FraisDePort PRIMARY KEY,
+  FdP decimal(2)
+);
+
+CREATE TABLE Conseillers(
+  IdCons decimal(8)
+CONSTRAINT PK_Conseillers PRIMARY KEY,
+  NomCons Char Var(20),
+  PrenomCons Char Var(20)
+)
+  
+CREATE TABLE Types(
+  LibelleType Char Var(20)
+CONSTRAINT PK_Types PRIMARY KEY,
+  Taxe decimal(3,2)
+)
+
+CREATE TABLE Produits(
+  IdProd decimal(8)
+CONSTRAINT PK_Produits PRIMARY KEY,
+  NomProd Char Var(100),
+  PrixHT decimal(4),
+  QuantiteStock decimal(6),
+  LibelleType Char Var(20)
+CONSTRAINT FK_Prod_ref_Types REFERENCES Types(LibelleType),
+)
+
+CREATE TABLE PointsRelais(
+  IdRel decimal(8)
+CONSTRAINT PK_PointsRelais PRIMARY KEY,
+  NomRel Char Var(50),
+  NumRueRel decimal(4),
+  NomRueRel Char Var(50),
+  CPRel decimal(5)
+CONSTRAINT FK_Rel_ref_CodesPostaux REFERENCES CodesPostaux(CP),
+  PaysRel Char Var(20)
+CONSTRAINT FK_Rel_ref_FraisDePort REFERENCES FraisDePort(PaysRel),
+)
+
+CREATE TABLE Clients(
+  IdCl decimal(8)
+CONSTRAINT PK_Clients PRIMARY KEY,
+  NomCl Char Var(20),
+  PrenomCl Char Var(20),
+  NumRueCl decimal(4),
+  NomRueCl Char Var(50),
+  PaysCl Char Var(20),
+  MailCl Char Var(50),
+  TelCl Char(10),
+  PointsFid decimal(4),
+  DateNaisCl Date,
+  DateAdhCl Date,
+  CPCl decimal(5)
+CONSTRAINT FK_Cl_ref_CodesPostaux REFERENCES CodesPostaux(CP),
+)
+
+CREATE TABLE Commandes(
+  NumCmd decimal(8)
+CONSTRAINT PK_Commandes PRIMARY KEY,
+  DateCmd Date,
+  EtatCmd Char Var(30),
+  DateLiv Date,
+  PrixTotCmd decimal(4),
+  IdCl decimal(8)
+CONSTRAINT FK_Cmd_ref_Cl REFERENCES Clients(IdCl),
+  IdCons decimal(8)
+CONSTRAINT FK_Cmd_ref_Cons REFERENCES Conseillers(IdCons),
+  IdRel decimal(8)
+CONSTRAINT FK_Cmd_ref_Rel REFERENCES PointsRelais(IdRel),
+)
+
+CREATE TABLE BonsAchats(
+  NumBon decimal(8)
+CONSTRAINT PK_BonsAchats PRIMARY KEY,
+  DateEmis Date,
+  MontantBon decimal(2),
+  IdCl decimal(8)
+CONSTRAINT FK_BonsAch_ref_Cl REFERENCES Clients(IdCl),
+  NumCmd decimal(8)
+CONSTRAINT FK_BonsAch_ref_Cmd REFERENCES Commandes(NumCmd),
+)
+
+CREATE TABLE Factures(
+  NumFac decimal(8)
+CONSTRAINT PK_Factures PRIMARY KEY,
+  DateFac Date,
+  NumCmd decimal(8)
+CONSTRAINT FK_Fac_ref_Cmd REFERENCES Commandes(NumCmd),
+)
+
+CREATE TABLE CompositionCmd(
+  NumCmd decimal(8)
+CONSTRAINT FK_Compo_ref_Cmd REFERENCES Commandes(NumCmd),
+  IdProd decimal(8)
+CONSTRAINT FK_Compo_ref_Prod REFERENCES Produits(IdProd),
+  QuantiteVoulue decimal(3),
+CONSTRAINT PK_CompositionCmd PRIMARY KEY(NumCmd,IdProd)
+)
+
+
+
 
