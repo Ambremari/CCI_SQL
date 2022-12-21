@@ -25,20 +25,21 @@ CONSTRAINT PK_FraisDePort PRIMARY KEY,
 CREATE TABLE Conseillers(
   IdCons decimal(8)
 CONSTRAINT PK_Conseillers PRIMARY KEY,
-  NomCons Char Var(20),
-  PrenomCons Char Var(20)
+  NomCons Char Var(20) NOT NULL,
+  PrenomCons Char Var(20) NOT NULL
 )
   
 CREATE TABLE Types(
   LibelleType Char Var(20)
 CONSTRAINT PK_Types PRIMARY KEY,
   Taxe decimal(3,2)
+CONSTRAINT Dom_Taxe CHECK (Taxe>0 AND Taxe<1)
 )
 
 CREATE TABLE Produits(
   IdProd decimal(8)
 CONSTRAINT PK_Produits PRIMARY KEY,
-  NomProd Char Var(100),
+  NomProd Char Var(100) NOT NULL,
   PrixHT decimal(4),
   QuantiteStock decimal(6),
   LibelleType Char Var(20)
@@ -48,7 +49,7 @@ CONSTRAINT FK_Prod_ref_Types REFERENCES Types(LibelleType),
 CREATE TABLE PointsRelais(
   IdRel decimal(8)
 CONSTRAINT PK_PointsRelais PRIMARY KEY,
-  NomRel Char Var(50),
+  NomRel Char Var(50) NOT NULL,
   NumRueRel decimal(4),
   NomRueRel Char Var(50),
   CPRel decimal(5)
@@ -60,16 +61,20 @@ CONSTRAINT FK_Rel_ref_FraisDePort REFERENCES FraisDePort(PaysRel),
 CREATE TABLE Clients(
   IdCl decimal(8)
 CONSTRAINT PK_Clients PRIMARY KEY,
-  NomCl Char Var(20),
-  PrenomCl Char Var(20),
+  NomCl Char Var(20) NOT NULL,
+  PrenomCl Char Var(20) NOT NULL,
   NumRueCl decimal(4),
   NomRueCl Char Var(50),
   PaysCl Char Var(20),
-  MailCl Char Var(50),
+  MailCl Char Var(50)
+CONSTRAINT Dom_MailCl CHECK (MailCl LIKE (".*@.*\..*")),
   TelCl Char(10),
+CONSTRAINT Dom_TelCl CHECK (TelCl LIKE("0{0,9}*"),
   PointsFid decimal(4),
-  DateNaisCl Date,
-  DateAdhCl Date,
+  DateNaisCl Date
+CONSTRAINT Dom_DateNaisCl CHECK (DateNaisCl > '1900-01-01'),
+  DateAdhCl Date
+CONSTRAINT Dom_DateAdhCl CHECK (DateCmd > '2000-01-01'),
   CPCl decimal(5)
 CONSTRAINT FK_Cl_ref_CodesPostaux REFERENCES CodesPostaux(CP),
 )
@@ -77,9 +82,11 @@ CONSTRAINT FK_Cl_ref_CodesPostaux REFERENCES CodesPostaux(CP),
 CREATE TABLE Commandes(
   NumCmd decimal(8)
 CONSTRAINT PK_Commandes PRIMARY KEY,
-  DateCmd Date,
-  EtatCmd Char Var(30),
-  DateLiv Date,
+  DateCmd Date
+CONSTRAINT Dom_DateCmd CHECK (DateCmd > '2000-01-01')
+  EtatCmd Char Var(30) NOT NULL DEFAULT "En attente de validation" CONSTRAINT Dom_EtatCmd CHECK (EtatCmd IN("En attente de validation", "Payée, en attente de préparation", "En préparation", "Expédiée", "En point relais", "Finalisée"), 
+  DateLiv Date
+CONSTRAINT Dom_DateLiv CHECK (DateLiv > DateCmd),
   PrixTotCmd decimal(4),
   IdCl decimal(8)
 CONSTRAINT FK_Cmd_ref_Cl REFERENCES Clients(IdCl),
@@ -93,7 +100,7 @@ CREATE TABLE BonsAchats(
   NumBon decimal(8)
 CONSTRAINT PK_BonsAchats PRIMARY KEY,
   DateEmis Date,
-  MontantBon decimal(2),
+  MontantBon decimal(2) DEFAULT 10,
   IdCl decimal(8)
 CONSTRAINT FK_BonsAch_ref_Cl REFERENCES Clients(IdCl),
   NumCmd decimal(8)
@@ -103,7 +110,8 @@ CONSTRAINT FK_BonsAch_ref_Cmd REFERENCES Commandes(NumCmd),
 CREATE TABLE Factures(
   NumFac decimal(8)
 CONSTRAINT PK_Factures PRIMARY KEY,
-  DateFac Date,
+  DateFac Date
+CONSTRAINT Dom_DateFac CHECK (DateFac > DateCmd),,
   NumCmd decimal(8)
 CONSTRAINT FK_Fac_ref_Cmd REFERENCES Commandes(NumCmd),
 )
