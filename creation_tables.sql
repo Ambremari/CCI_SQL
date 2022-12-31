@@ -27,14 +27,14 @@ CREATE TABLE Conseillers(
 CONSTRAINT PK_Conseillers PRIMARY KEY,
   NomCons Char Var(20) NOT NULL,
   PrenomCons Char Var(20) NOT NULL
-);
+)
   
 CREATE TABLE Types(
   LibelleType Char Var(20)
 CONSTRAINT PK_Types PRIMARY KEY,
   Taxe decimal(3,2)
-CONSTRAINT Dom_Taxe CHECK (Taxe > 0 AND Taxe < 1)
-);
+CONSTRAINT Dom_Taxe CHECK (Taxe>0 AND Taxe<1)
+)
 
 CREATE TABLE Produits(
   IdProd decimal(8)
@@ -44,7 +44,7 @@ CONSTRAINT PK_Produits PRIMARY KEY,
   QuantiteStock decimal(6),
   LibelleType Char Var(20)
 CONSTRAINT FK_Prod_ref_Types REFERENCES Types(LibelleType),
-);
+)
 
 CREATE TABLE PointsRelais(
   IdRel decimal(8)
@@ -56,7 +56,7 @@ CONSTRAINT PK_PointsRelais PRIMARY KEY,
 CONSTRAINT FK_Rel_ref_CodesPostaux REFERENCES CodesPostaux(CP),
   PaysRel Char Var(20)
 CONSTRAINT FK_Rel_ref_FraisDePort REFERENCES FraisDePort(PaysRel),
-);
+)
 
 CREATE TABLE Clients(
   IdCl decimal(8)
@@ -69,7 +69,7 @@ CONSTRAINT PK_Clients PRIMARY KEY,
   MailCl Char Var(50)
 CONSTRAINT Dom_MailCl CHECK (MailCl LIKE (".*@.*\..*")),
   TelCl Char(10),
-CONSTRAINT Dom_TelCl CHECK (TelCl LIKE ("0{0,9}*"),
+CONSTRAINT Dom_TelCl CHECK (TelCl LIKE("0{0,9}*"),
   PointsFid decimal(4),
   DateNaisCl Date
 CONSTRAINT Dom_DateNaisCl CHECK (DateNaisCl > '1900-01-01'),
@@ -77,7 +77,7 @@ CONSTRAINT Dom_DateNaisCl CHECK (DateNaisCl > '1900-01-01'),
 CONSTRAINT Dom_DateAdhCl CHECK (DateCmd > '2000-01-01'),
   CPCl decimal(5)
 CONSTRAINT FK_Cl_ref_CodesPostaux REFERENCES CodesPostaux(CP),
-);
+)
 
 CREATE TABLE Commandes(
   NumCmd decimal(8)
@@ -94,7 +94,7 @@ CONSTRAINT FK_Cmd_ref_Cl REFERENCES Clients(IdCl),
 CONSTRAINT FK_Cmd_ref_Cons REFERENCES Conseillers(IdCons),
   IdRel decimal(8)
 CONSTRAINT FK_Cmd_ref_Rel REFERENCES PointsRelais(IdRel),
-);
+)
 
 CREATE TABLE BonsAchats(
   NumBon decimal(8)
@@ -105,7 +105,7 @@ CONSTRAINT PK_BonsAchats PRIMARY KEY,
 CONSTRAINT FK_BonsAch_ref_Cl REFERENCES Clients(IdCl),
   NumCmd decimal(8)
 CONSTRAINT FK_BonsAch_ref_Cmd REFERENCES Commandes(NumCmd),
-);
+)
 
 CREATE TABLE Factures(
   NumFac decimal(8)
@@ -114,7 +114,7 @@ CONSTRAINT PK_Factures PRIMARY KEY,
 CONSTRAINT Dom_DateFac CHECK (DateFac > DateCmd),,
   NumCmd decimal(8)
 CONSTRAINT FK_Fac_ref_Cmd REFERENCES Commandes(NumCmd),
-);
+)
 
 CREATE TABLE CompositionCmd(
   NumCmd decimal(8)
@@ -123,7 +123,7 @@ CONSTRAINT FK_Compo_ref_Cmd REFERENCES Commandes(NumCmd),
 CONSTRAINT FK_Compo_ref_Prod REFERENCES Produits(IdProd),
   QuantiteVoulue decimal(3),
 CONSTRAINT PK_CompositionCmd PRIMARY KEY(NumCmd,IdProd)
-);
+)
 
 
 
