@@ -31,8 +31,7 @@ CONSTRAINT PK_Conseillers PRIMARY KEY,
   
 CREATE TABLE Types(
   LibelleType Char Var(20)
-CONSTRAINT PK_Types PRIMARY KEY
-CONSTRAINT Dom_LibelleType CHECK (LibelleType IN ("Cosmétique", "Bien-être", "Entretien")),
+CONSTRAINT PK_Types PRIMARY KEY,
   Taxe decimal(3,2)
 CONSTRAINT Dom_Taxe CHECK (Taxe > 0 AND Taxe < 1)
 );
@@ -85,8 +84,7 @@ CREATE TABLE Commandes(
 CONSTRAINT PK_Commandes PRIMARY KEY,
   DateCmd Date
 CONSTRAINT Dom_DateCmd CHECK (DateCmd > '2000-01-01')
-  EtatCmd Char Var(30) NOT NULL DEFAULT "En attente de validation" 
-CONSTRAINT Dom_EtatCmd CHECK (EtatCmd IN("En attente de validation", "Payée, en attente de préparation", "En préparation", "Expédiée", "En point relais", "Finalisée"), 
+  EtatCmd Char Var(30) NOT NULL DEFAULT "En attente de validation" CONSTRAINT Dom_EtatCmd CHECK (EtatCmd IN("En attente de validation", "Payée, en attente de préparation", "En préparation", "Expédiée", "En point relais", "Finalisée"), 
   DateLiv Date
 CONSTRAINT Dom_DateLiv CHECK (DateLiv > DateCmd),
   PrixTotCmd decimal(4),
@@ -101,8 +99,7 @@ CONSTRAINT FK_Cmd_ref_Rel REFERENCES PointsRelais(IdRel),
 CREATE TABLE BonsAchats(
   NumBon decimal(8)
 CONSTRAINT PK_BonsAchats PRIMARY KEY,
-  DateEmis Date
-CONSTRAINT Dom_DateEmis CHECK (DateEmis > '2000-01-01'),
+  DateEmis Date,
   MontantBon decimal(2) DEFAULT 10,
   IdCl decimal(8)
 CONSTRAINT FK_BonsAch_ref_Cl REFERENCES Clients(IdCl),
