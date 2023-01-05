@@ -84,7 +84,7 @@ CREATE TABLE Commandes(
 CONSTRAINT PK_Commandes PRIMARY KEY,
   DateCmd Date
 CONSTRAINT Dom_DateCmd CHECK (DateCmd > '2000-01-01')
-  EtatCmd Char Varying(30) NOT NULL DEFAULT "En attente de validation" CONSTRAINT Dom_EtatCmd CHECK (EtatCmd IN("En attente de validation", "Payée, en attente de préparation", "En préparation", "Expédiée", "En point relais", "Finalisée")), 
+  EtatCmd Char Varying(30) NOT NULL DEFAULT "En attente de validation" CONSTRAINT Dom_EtatCmd CHECK (EtatCmd IN("En attente de validation", "Payée, en attente de préparation", "En préparation", "Expédiée", "En point relais", "Finalisée"), 
   DateLiv Date
 CONSTRAINT Dom_DateLiv CHECK (DateLiv > DateCmd),
   PrixTotCmd decimal(4),
@@ -111,7 +111,7 @@ CREATE TABLE Factures(
   NumFac decimal(8)
 CONSTRAINT PK_Factures PRIMARY KEY,
   DateFac Date
-CONSTRAINT Dom_DateFac CHECK (DateFac > DateCmd),
+CONSTRAINT Dom_DateFac CHECK (DateFac > DateCmd),,
   NumCmd decimal(8)
 CONSTRAINT FK_Fac_ref_Cmd REFERENCES Commandes(NumCmd),
 );

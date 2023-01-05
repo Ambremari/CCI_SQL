@@ -11,22 +11,22 @@ DROP TABLE FraisDePort;
 DROP TABLE CodesPostaux;
 
 CREATE TABLE CodesPostaux(
-  CP decimal(5)
-CONSTRAINT PK_CodesPostaux PRIMARY KEY,
-  Ville Char Varying(20) 
+  CP decimal(5) NOT NULL,
+  Ville Char Varying(20),
+  CONSTRAINT PK_CodesPostaux PRIMARY KEY (CP)
 );
 
 CREATE TABLE FraisDePort(
-  PaysRel Char Varying(20)
-CONSTRAINT PK_FraisDePort PRIMARY KEY,
-  FdP decimal(2)
+  PaysRel Char Varying(20) NOT NULL,
+  FdP decimal(2),
+  CONSTRAINT PK_FraisDePort PRIMARY KEY (PaysRel)
 );
 
 CREATE TABLE Conseillers(
-  IdCons decimal(8)
-CONSTRAINT PK_Conseillers PRIMARY KEY,
+  IdCons decimal(8) NOT NULL,
   NomCons Char Varying(20) NOT NULL,
-  PrenomCons Char Varying(20) NOT NULL
+  PrenomCons Char Varying(20) NOT NULL,
+  CONSTRAINT PK_Conseillers PRIMARY KEY (IdCons)
 );
   
 CREATE TABLE Types(
@@ -43,7 +43,7 @@ CONSTRAINT PK_Produits PRIMARY KEY,
   PrixHT decimal(4),
   QuantiteStock decimal(6),
   LibelleType Char Varying(20)
-CONSTRAINT FK_Prod_ref_Types REFERENCES Types(LibelleType)
+CONSTRAINT FK_Prod_ref_Types REFERENCES Types(LibelleType),
 );
 
 CREATE TABLE PointsRelais(
@@ -84,7 +84,7 @@ CREATE TABLE Commandes(
 CONSTRAINT PK_Commandes PRIMARY KEY,
   DateCmd Date
 CONSTRAINT Dom_DateCmd CHECK (DateCmd > '2000-01-01')
-  EtatCmd Char Varying(30) NOT NULL DEFAULT "En attente de validation" CONSTRAINT Dom_EtatCmd CHECK (EtatCmd IN("En attente de validation", "Payée, en attente de préparation", "En préparation", "Expédiée", "En point relais", "Finalisée")), 
+  EtatCmd Char Varying(30) NOT NULL DEFAULT "En attente de validation" CONSTRAINT Dom_EtatCmd CHECK (EtatCmd IN("En attente de validation", "Payée, en attente de préparation", "En préparation", "Expédiée", "En point relais", "Finalisée"), 
   DateLiv Date
 CONSTRAINT Dom_DateLiv CHECK (DateLiv > DateCmd),
   PrixTotCmd decimal(4),
@@ -111,7 +111,7 @@ CREATE TABLE Factures(
   NumFac decimal(8)
 CONSTRAINT PK_Factures PRIMARY KEY,
   DateFac Date
-CONSTRAINT Dom_DateFac CHECK (DateFac > DateCmd),
+CONSTRAINT Dom_DateFac CHECK (DateFac > DateCmd),,
   NumCmd decimal(8)
 CONSTRAINT FK_Fac_ref_Cmd REFERENCES Commandes(NumCmd),
 );
