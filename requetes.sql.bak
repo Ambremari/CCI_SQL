@@ -66,9 +66,9 @@ WHERE Cl.IdCl = '' AND ProdCommandes = (SELECT MAX(ProdCommandes)
 						WHERE Cl.IdCl = '');
 
 /* #11 Lister tous les produits de la gamme "anti-âge" */. 
-SELECT *
+SELECT IdProd, NomProd
 FROM Produits
-WHERE NomProd LIKE '%anti-âge%';
+WHERE NomProd LIKE ;
 
 /* #12 Lister les clients ayant dépensé de l'argent les 2 dernier mois, avec le montant dépensé. */
 SELECT IdCl, SUM(PrixTotCmd)
