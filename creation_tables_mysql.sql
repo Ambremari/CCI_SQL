@@ -143,9 +143,9 @@ CREATE TABLE CompositionCmd(
   CONSTRAINT PK_CompositionCmd PRIMARY KEY(NumCmd,IdProd)
 );
 
-ALTER TABLE Factures
+/* ALTER TABLE Factures
 ADD  CONSTRAINT Dom_DateFac 
-CHECK (bodynature.checkDate(NumCmd, DateFac) = 1);
+CHECK (bodynature.checkDate(NumCmd, DateFac) = 1); */
 
 DELIMITER $$
 CREATE FUNCTION bodynature.checkDate(myNum decimal(8), myDate Date)
