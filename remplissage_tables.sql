@@ -369,22 +369,6 @@ INSERT INTO PointsRelais(IdRel, NomRel, NumRueRel, NomRueRel, CPRel, PaysRel)
 			'France');
 
 INSERT INTO PointsRelais(IdRel, NomRel, NumRueRel, NomRueRel, CPRel, PaysRel)
-	VALUES (12345673, 
-			'Chantelle AYTRE', 
-			43, 
-			'Av Edmond Grasset', 
-			17440, 
-			'France');
-
-INSERT INTO PointsRelais(IdRel, NomRel, NumRueRel, NomRueRel, CPRel, PaysRel)
-	VALUES (12345674, 
-			'Le Jardin des Fleurs', 
-			2, 
-			'Boulevard Albert 1er', 
-			17200, 
-			'France');
-
-INSERT INTO PointsRelais(IdRel, NomRel, NumRueRel, NomRueRel, CPRel, PaysRel)
 	VALUES (12345674, 
 			'Le Jardin des Fleurs', 
 			2, 
@@ -399,3 +383,122 @@ INSERT INTO PointsRelais(IdRel, NomRel, NumRueRel, NomRueRel, CPRel, PaysRel)
 			'Av William Ponty', 
 			17300, 
 			'France');
+
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, CPCl)
+	VALUES (17925861, 
+			'Dupont', 
+			'Jean', 
+			84, 
+			'Rue du Moulin', 
+			'France', 
+			'dupont-jean@orange.fr', 
+			0675684698, 
+			17300);
+
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, PointsFid, DateNaisCl, DateAdhCl, CPCl)
+	VALUES (17925862, 
+			'Tuen', 
+			'Valentine', 
+			58, 
+			'Allée des Cerisiers', 
+			'France', 
+			'valentine17@hotmail.fr', 
+			0695759646, 
+			96,
+			TO_DATE('01/06/1989', 'DD/MM/YYYY'),
+			TO_DATE('25/08/2015', 'DD/MM/YYYY'),
+			17440);
+
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, PointsFid, DateNaisCl, DateAdhCl, CPCl)
+	VALUES (17925863, 
+			'Ligand', 
+			'Sebastien', 
+			156, 
+			'Allée du Petit Pont', 
+			'France', 
+			'sebastien_du_17@hotmail.fr', 
+			0752395642,
+			135,
+			TO_DATE('24/04/1997', 'DD/MM/YYYY'),
+			TO_DATE('09/02/2022', 'DD/MM/YYYY'),
+			17200);
+
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, CPCl)
+	VALUES (17925864, 
+			'Oudain', 
+			'Marie', 
+			462, 
+			'Place des Emmurés', 
+			'France', 
+			'marieoud@hotmail.fr', 
+			0679912569, 
+			17440);
+
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, PointsFid, DateNaisCl, DateAdhCl, CPCl)
+	VALUES (17925865, 
+			'Sahraoui', 
+			'Melissa', 
+			189, 
+			'Rue de la Fontaine', 
+			'France', 
+			'melissasahraoui@gmail.com', 
+			0658961548, 
+			20,
+			TO_DATE('17/01/1956', 'DD/MM/YYYY'),
+			TO_DATE('15/05/2020', 'DD/MM/YYYY'),			
+			17440);
+
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, CPCl)
+	VALUES (17925866, 
+			'Hugo', 
+			'Jeanne', 
+			86, 
+			'Rue des pavés', 
+			'France', 
+			'jeanne.hugo@gmail.com', 
+			0678963646, 
+			17000);
+
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, PointsFid, DateNaisCl, DateAdhCl, CPCl)
+	VALUES (17925867, 
+			'Descamp', 
+			'Georges', 
+			18, 
+			'Allée du Paradis', 
+			'France', 
+			'georges17440@gmail.com', 
+			0678964631, 
+			58,
+			TO_DATE('28/07/1962', 'DD/MM/YYYY'),
+			TO_DATE('05/06/2022', 'DD/MM/YYYY'),			
+			17000);
+
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, PointsFid, DateNaisCl, DateAdhCl, CPCl)
+	VALUES (17925868, 
+			'Canu', 
+			'Anais', 
+			56, 
+			'Rue Georges Pompidou', 
+			'France', 
+			'anais.canu@orange.fr', 
+			0678954862, 
+			96,
+			TO_DATE('15/09/1976', 'DD/MM/YYYY'),
+			TO_DATE('19/04/2021', 'DD/MM/YYYY'),			
+			17000);
+
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, PointsFid, DateNaisCl, DateAdhCl, CPCl)
+	VALUES (17925869, 
+			'Vanger', 
+			'Carolle', 
+			52, 
+			'Allée du Cordonnier', 
+			'France', 
+			'Carolle_Vanger@laposte.com', 
+			0759625963, 
+			142,
+			TO_DATE('19/07/2001', 'DD/MM/YYYY'),
+			TO_DATE('16/12/2022', 'DD/MM/YYYY'),			
+			17200);
+
+
