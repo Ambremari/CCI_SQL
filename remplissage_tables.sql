@@ -536,3 +536,95 @@ INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
 	VALUES (14769438, 
 			'Madim',
 			'Jean-Claude');
+
+INSERT INTO Commandes(NumCmd, DateCmd, EtatCmd, DateLiv, PrixTotCmd, IdCl, IdCons, IdRel)
+	VALUES (14695368,
+			TO_DATE('30/12/2022', 'DD/MM/YYYY')
+			'En point relais',
+			TO_DATE('30/12/2022', 'DD/MM/YYYY')
+			34.16,
+			17925867,
+			14769438,
+			12345671);
+			
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695368, 
+			12345674, 
+			1);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695368, 
+			12345615, 
+			2);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695368, 
+			45678921, 
+			5);
+
+INSERT INTO Commandes(NumCmd, DateCmd, EtatCmd, DateLiv, PrixTotCmd, IdCl, IdCons, IdRel)
+	VALUES (14695369,
+			TO_DATE('04/04/2020', 'DD/MM/YYYY')
+			'Finalisée',
+			TO_DATE('10/04/2020', 'DD/MM/YYYY')
+			81.6,
+			17925865,
+			14769432,
+			12345673);
+			
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695369, 
+			78912346, 
+			10);
+
+INSERT INTO Commandes(NumCmd, DateCmd, EtatCmd, DateLiv, PrixTotCmd, IdCl, IdCons, IdRel)
+	VALUES (14695370,
+			TO_DATE('08/01/2023', 'DD/MM/YYYY')
+			'En préparation',
+			TO_DATE('18/01/2023', 'DD/MM/YYYY')
+			32.16,
+			17925863,
+			14769435,
+			12345674);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695370, 
+			12345679, 
+			1);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695370, 
+			12345611, 
+			1);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695370, 
+			12345612, 
+			1);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695370, 
+			12345613, 
+			1);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695370, 
+			12345614, 
+			1);
+
+INSERT INTO Commandes(NumCmd, DateCmd, EtatCmd, DateLiv, PrixTotCmd, IdCl, IdCons, IdRel)
+	VALUES (14695370,
+			TO_DATE('04/05/2019', 'DD/MM/YYYY')
+			'Finalisée',
+			TO_DATE('16/05/2019', 'DD/MM/YYYY')
+			33.12,
+			17925866,
+			14769436,
+			12345672);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695370, 
+			12345673, 
+			2);
+
+
