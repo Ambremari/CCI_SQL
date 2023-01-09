@@ -502,3 +502,37 @@ INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl,
 			17200);
 
 
+INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
+	VALUES (14769432, 
+			'Doumé',
+			'Joachim');
+			
+INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
+	VALUES (14769433, 
+			'Cardan',
+			'Joséphine');
+
+INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
+	VALUES (14769434, 
+			'Hoyé',
+			'Karim');
+
+INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
+	VALUES (14769435, 
+			'Toity',
+			'Anabelle');
+
+INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
+	VALUES (14769436, 
+			'Valentin',
+			'Marie-Christine');
+
+INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
+	VALUES (14769437, 
+			'Potin',
+			'Valérie');
+
+INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
+	VALUES (14769438, 
+			'Madim',
+			'Jean-Claude');
