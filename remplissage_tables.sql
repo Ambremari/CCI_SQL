@@ -679,9 +679,9 @@ INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
 
 INSERT INTO Commandes(NumCmd, DateCmd, EtatCmd, DateLiv, PrixTotCmd, IdCl, IdCons, IdRel)
 	VALUES (14695374,
-			TO_DATE('04/05/2019', 'DD/MM/YYYY')
+			TO_DATE('31/11/2021', 'DD/MM/YYYY')
 			'Finalisée',
-			TO_DATE('16/05/2019', 'DD/MM/YYYY')
+			TO_DATE('10/12/2021', 'DD/MM/YYYY')
 			36.24,
 			17925863,
 			14769436,
@@ -699,9 +699,9 @@ INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
 
 INSERT INTO Commandes(NumCmd, DateCmd, EtatCmd, DateLiv, PrixTotCmd, IdCl, IdCons, IdRel)
 	VALUES (14695375,
-			TO_DATE('04/05/2019', 'DD/MM/YYYY')
+			TO_DATE('08/07/2022', 'DD/MM/YYYY')
 			'Finalisée',
-			TO_DATE('16/05/2019', 'DD/MM/YYYY')
+			TO_DATE('20/07/2022', 'DD/MM/YYYY')
 			20.18,
 			17925867,
 			14769437,
@@ -715,4 +715,59 @@ INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO BonsAchats(NumBon, DateEmis, MontantBon, IdCl, NumCmd)
+	VALUES (78512586,
+			TO_DATE('06/05/2019', 'DD/MM/YYYY')
+			10,
+			17925869,
+			14695373);
+
+INSERT INTO BonsAchats(NumBon, DateEmis, MontantBon, IdCl, NumCmd)
+	VALUES (78512587,
+			TO_DATE('01/01/2023', 'DD/MM/YYYY')
+			10,
+			17925867,
+			14695368);
+
+INSERT INTO BonsAchats(NumBon, DateEmis, MontantBon, IdCl, NumCmd)
+	VALUES (78512588,
+			TO_DATE('09/01/2023', 'DD/MM/YYYY')
+			10,
+			17925863,
+			14695370);
+
+INSERT INTO BonsAchats(NumBon, DateEmis, MontantBon, IdCl, NumCmd)
+	VALUES (78512588,
+			TO_DATE('09/01/2023', 'DD/MM/YYYY')
+			10,
+			17925863,
+			14695370);
+
+INSERT INTO BonsAchats(NumBon, DateEmis, MontantBon, IdCl, NumCmd)
+	VALUES (78512589,
+			TO_DATE('02/12/2021', 'DD/MM/YYYY')
+			10,
+			17925863,
+			14695374);
+
+INSERT INTO BonsAchats(NumBon, DateEmis, MontantBon, IdCl, NumCmd)
+	VALUES (78512590,
+			TO_DATE('09/07/2022', 'DD/MM/YYYY')
+			10,
+			17925867,
+			14695375);
 
