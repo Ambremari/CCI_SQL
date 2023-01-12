@@ -66,12 +66,12 @@ CREATE TABLE Clients(
   NomCl Char Varying(20) NOT NULL,
   PrenomCl Char Varying(20) NOT NULL,
   NumRueCl decimal(4),
-  NomRueCl Char Varying(50),
+  NomRueCl Char Varying(50),
   PaysCl Char Varying(20),
   MailCl Char Varying(50)
-	CHECK (MailCl LIKE (".*@.*\..*")),
+	CHECK (MailCl LIKE ("%@%\.%")),
   TelCl Char(10)
-	CHECK (TelCl LIKE ("0{0,9}*")),
+	CHECK (TelCl REGEXP "0[:alnum:]*"),
   PointsFid decimal(4),
   DateNaisCl Date
 	CHECK (DateNaisCl > '1900-01-01'),
