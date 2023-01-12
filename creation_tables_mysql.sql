@@ -39,7 +39,7 @@ CREATE TABLE Types(
 CREATE TABLE Produits(
   IdProd decimal(8) NOT NULL,
   NomProd Char Varying(100) NOT NULL,
-  PrixHT decimal(4),
+  PrixHT decimal(6,2),
   QuantiteStock decimal(6),
   LibelleType Char Varying(20)
 	CONSTRAINT FK_Prod_ref_Types
@@ -96,7 +96,7 @@ CREATE TABLE Commandes(
 					"En point relais", 
 					"Finalisée")), 
   DateLiv Date,
-  PrixTotCmd decimal(4),
+  PrixTotCmd decimal(6,2),
   IdCl decimal(8)
 	CONSTRAINT FK_Cmd_ref_Cl
 	REFERENCES Clients(IdCl),
@@ -162,7 +162,6 @@ BEGIN
 END;
 $$
 DELIMITER ;	
-
 
 
 
