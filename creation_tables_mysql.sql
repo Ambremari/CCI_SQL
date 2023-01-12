@@ -39,7 +39,7 @@ CREATE TABLE Types(
 CREATE TABLE Produits(
   IdProd decimal(8) NOT NULL,
   NomProd Char Varying(100) NOT NULL,
-  PrixHT decimal(4),
+  PrixHT decimal(6,2),
   QuantiteStock decimal(6),
   LibelleType Char Varying(20)
 	CONSTRAINT FK_Prod_ref_Types
@@ -66,12 +66,12 @@ CREATE TABLE Clients(
   NomCl Char Varying(20) NOT NULL,
   PrenomCl Char Varying(20) NOT NULL,
   NumRueCl decimal(4),
-  NomRueCl Char Varying(50),
+  NomRueCl Char Varying(50),
   PaysCl Char Varying(20),
   MailCl Char Varying(50)
-	CHECK (MailCl LIKE (".*@.*\..*")),
+	CHECK (MailCl LIKE ("%@%\.%")),
   TelCl Char(10)
-	CHECK (TelCl LIKE ("0{0,9}*")),
+	CHECK (TelCl REGEXP "0[:alnum:]*"),
   PointsFid decimal(4),
   DateNaisCl Date
 	CHECK (DateNaisCl > '1900-01-01'),
@@ -96,7 +96,7 @@ CREATE TABLE Commandes(
 					"En point relais", 
 					"Finalisée")), 
   DateLiv Date,
-  PrixTotCmd decimal(4),
+  PrixTotCmd decimal(6,2),
   IdCl decimal(8)
 	CONSTRAINT FK_Cmd_ref_Cl
 	REFERENCES Clients(IdCl),
@@ -143,9 +143,9 @@ CREATE TABLE CompositionCmd(
   CONSTRAINT PK_CompositionCmd PRIMARY KEY(NumCmd,IdProd)
 );
 
-ALTER TABLE Factures
+/* ALTER TABLE Factures
 ADD  CONSTRAINT Dom_DateFac 
-CHECK (bodynature.checkDate(NumCmd, DateFac) = 1);
+CHECK (bodynature.checkDate(NumCmd, DateFac) = 1); */
 
 DELIMITER $$
 CREATE FUNCTION bodynature.checkDate(myNum decimal(8), myDate Date)
@@ -162,7 +162,6 @@ BEGIN
 END;
 $$
 DELIMITER ;	
-
 
 
 

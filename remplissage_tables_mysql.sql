@@ -399,3 +399,423 @@ INSERT INTO PointsRelais(IdRel, NomRel, NumRueRel, NomRueRel, CPRel, PaysRel)
 			'Av William Ponty', 
 			17300, 
 			'France');
+			
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, CPCl)
+	VALUES (17925861, 
+			'Dupont', 
+			'Jean', 
+			84, 
+			'Rue du Moulin', 
+			'France', 
+			'dupont-jean@orange.fr', 
+			0675684698, 
+			17300);
+			
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, PointsFid, DateNaisCl, DateAdhCl, CPCl)
+	VALUES (17925862, 
+			'Tuen', 
+			'Valentine', 
+			58, 
+			'Allée des Cerisiers', 
+			'France', 
+			'valentine17@hotmail.fr', 
+			0695759646, 
+			96,
+			'1989-06-01',
+			'2015-08-25',
+			17440);
+			
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, PointsFid, DateNaisCl, DateAdhCl, CPCl)
+	VALUES (17925863, 
+			'Ligand', 
+			'Sebastien', 
+			156, 
+			'Allée du Petit Pont', 
+			'France', 
+			'sebastien_du_17@hotmail.fr', 
+			0752395642,
+			135,
+			STR_TO_DATE('24/04/1997', '%d/%m/%Y'),
+			STR_TO_DATE('09/02/2022', '%d/%m/%Y'),
+			17200);
+			
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, CPCl)
+	VALUES (17925864, 
+			'Oudain', 
+			'Marie', 
+			462, 
+			'Place des Emmurés', 
+			'France', 
+			'marieoud@hotmail.fr', 
+			0679912569, 
+			17440);
+
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, PointsFid, DateNaisCl, DateAdhCl, CPCl)
+	VALUES (17925865, 
+			'Sahraoui', 
+			'Melissa', 
+			189, 
+			'Rue de la Fontaine', 
+			'France', 
+			'melissasahraoui@gmail.com', 
+			0658961548, 
+			20,
+			STR_TO_DATE('17/01/1956', '%d/%m/%Y'),
+			STR_TO_DATE('15/05/2020', '%d/%m/%Y'),			
+			17440);
+			
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, CPCl)
+	VALUES (17925866, 
+			'Hugo', 
+			'Jeanne', 
+			86, 
+			'Rue des pavés', 
+			'France', 
+			'jeanne.hugo@gmail.com', 
+			0678963646, 
+			17000);
+			
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, PointsFid, DateNaisCl, DateAdhCl, CPCl)
+	VALUES (17925867, 
+			'Descamp', 
+			'Georges', 
+			18, 
+			'Allée du Paradis', 
+			'France', 
+			'georges17440@gmail.com', 
+			0678964631, 
+			58,
+			STR_TO_DATE('28/07/1962', '%d/%m/%Y'),
+			STR_TO_DATE('05/06/2022', '%d/%m/%Y'),			
+			17000);
+			
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, PointsFid, DateNaisCl, DateAdhCl, CPCl)
+	VALUES (17925868, 
+			'Canu', 
+			'Anais', 
+			56, 
+			'Rue Georges Pompidou', 
+			'France', 
+			'anais.canu@orange.fr', 
+			0678954862, 
+			96,
+			STR_TO_DATE('15/09/1976', '%d/%m/%Y'),
+			STR_TO_DATE('19/04/2021', '%d/%m/%Y'),			
+			17000);
+			
+INSERT INTO Clients(IdCl, NomCl, PrenomCl, NumRueCl, NomRueCl , PaysCl, MailCl, TelCl, PointsFid, DateNaisCl, DateAdhCl, CPCl)
+	VALUES (17925869, 
+			'Vanger', 
+			'Carolle', 
+			52, 
+			'Allée du Cordonnier', 
+			'France', 
+			'carolle_vanger@laposte.com', 
+			0759625963, 
+			142,
+			STR_TO_DATE('19/07/2001', '%d/%m/%Y'),
+			STR_TO_DATE('16/12/2022', '%d/%m/%Y'),			
+			17200);
+			
+INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
+	VALUES (14769432, 
+			'Doumé',
+			'Joachim');
+			
+INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
+	VALUES (14769433, 
+			'Cardan',
+			'Joséphine');
+
+INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
+	VALUES (14769434, 
+			'Hoyé',
+			'Karim');
+
+INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
+	VALUES (14769435, 
+			'Toity',
+			'Anabelle');
+
+INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
+	VALUES (14769436, 
+			'Valentin',
+			'Marie-Christine');
+
+INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
+	VALUES (14769437, 
+			'Potin',
+			'Valérie');
+
+INSERT INTO Conseillers (IdCons, NomCons, PrenomCons)
+	VALUES (14769438, 
+			'Madim',
+			'Jean-Claude');
+
+INSERT INTO Commandes(NumCmd, DateCmd, EtatCmd, DateLiv, IdCl, IdCons, IdRel)
+	VALUES (14695368,
+			STR_TO_DATE('30/12/2022', '%d/%m/%Y'),
+			'En point relais',
+			STR_TO_DATE('06/01/2023', '%d/%m/%Y'),
+			17925867,
+			14769438,
+			12345671);
+			
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695368, 
+			12345674, 
+			1);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695368, 
+			12345615, 
+			2);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695368, 
+			45678921, 
+			5);
+
+UPDATE Commandes
+SET PrixTotCmd =  calculTotal(14695368)
+WHERE Numcmd = 14695368;
+
+INSERT INTO Commandes(NumCmd, DateCmd, EtatCmd, DateLiv, IdCl, IdCons, IdRel)
+	VALUES (14695369,
+			STR_TO_DATE('04/04/2020', '%d/%m/%Y'),
+			'Finalisée',
+			STR_TO_DATE('10/04/2020', '%d/%m/%Y'),
+			17925865,
+			14769432,
+			12345673);
+			
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695369, 
+			78912346, 
+			10);
+
+UPDATE Commandes
+SET PrixTotCmd =  calculTotal(14695369)
+WHERE Numcmd = 14695369;
+
+INSERT INTO Commandes(NumCmd, DateCmd, EtatCmd, DateLiv, IdCl, IdCons, IdRel)
+	VALUES (14695370,
+			STR_TO_DATE('08/01/2023', '%d/%m/%Y'),
+			'En préparation',
+			STR_TO_DATE('18/01/2023', '%d/%m/%Y'),
+			17925863,
+			14769435,
+			12345674);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695370, 
+			12345679, 
+			1);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695370, 
+			12345611, 
+			1);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695370, 
+			12345612, 
+			1);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695370, 
+			12345613, 
+			1);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695370, 
+			12345614, 
+			1);
+			
+UPDATE Commandes
+SET PrixTotCmd =  calculTotal(14695370)
+WHERE Numcmd = 14695370;
+
+INSERT INTO Commandes(NumCmd, DateCmd, EtatCmd, DateLiv, IdCl, IdCons, IdRel)
+	VALUES (14695371,
+			STR_TO_DATE('04/05/2019', '%d/%m/%Y'),
+			'Finalisée',
+			STR_TO_DATE('16/05/2019', '%d/%m/%Y'),
+			17925866,
+			14769436,
+			12345672);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695371, 
+			12345673, 
+			2);
+
+UPDATE Commandes
+SET PrixTotCmd =  calculTotal(14695371)
+WHERE Numcmd = 14695371;
+
+INSERT INTO Commandes(NumCmd, DateCmd, EtatCmd, DateLiv, IdCl, IdCons, IdRel)
+	VALUES (14695372,
+			STR_TO_DATE('05/06/2015', '%d/%m/%Y'),
+			'Finalisée',
+			STR_TO_DATE('15/06/2015', '%d/%m/%Y'),
+			17925867,
+			14769434,
+			12345672);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695372, 
+			45678925, 
+			2);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695372, 
+			78912340, 
+			2);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695372, 
+			78912341, 
+			2);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695372, 
+			12345613, 
+			2);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695372, 
+			12345614, 
+			2);
+			
+UPDATE Commandes
+SET PrixTotCmd =  calculTotal(14695372)
+WHERE Numcmd = 14695372;
+
+INSERT INTO Commandes(NumCmd, DateCmd, EtatCmd, DateLiv, PrixTotCmd, IdCl, IdCons, IdRel)
+	VALUES (14695373,
+			STR_TO_DATE('04/05/2019', '%d/%m/%Y'),
+			'Finalisée',
+			STR_TO_DATE('16/05/2019', '%d/%m/%Y'),
+			10.18,
+			17925869,
+			14769435,
+			12345674);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695373, 
+			45678914, 
+			1);
+			
+INSERT INTO Commandes(NumCmd, DateCmd, EtatCmd, DateLiv, PrixTotCmd, IdCl, IdCons, IdRel)
+	VALUES (14695374,
+			STR_TO_DATE('30/11/2021', '%d/%m/%Y'),
+			'Finalisée',
+			STR_TO_DATE('10/12/2021', '%d/%m/%Y'),
+			36.24,
+			17925863,
+			14769436,
+			12345674);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695374, 
+			12345617, 
+			2);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695374, 
+			78912344, 
+			3);
+
+INSERT INTO Commandes(NumCmd, DateCmd, EtatCmd, DateLiv, PrixTotCmd, IdCl, IdCons, IdRel)
+	VALUES (14695375,
+			STR_TO_DATE('08/07/2022', '%d/%m/%Y'),
+			'Finalisée',
+			STR_TO_DATE('20/07/2022', '%d/%m/%Y'),
+			20.18,
+			17925867,
+			14769437,
+			12345671);
+
+INSERT INTO CompositionCmd(NumCmd, IdProd, QuantiteVoulue)
+	VALUES (14695375, 
+			45678920, 
+			9);
+			
+INSERT INTO BonsAchats(NumBon, DateEmis, MontantBon, IdCl, NumCmd)
+	VALUES (78512586,
+			STR_TO_DATE('06/05/2019', '%d/%m/%Y'),
+			10,
+			17925869,
+			14695373);
+			
+INSERT INTO BonsAchats(NumBon, DateEmis, MontantBon, IdCl)
+	VALUES (78512587,
+			STR_TO_DATE('01/01/2023', '%d/%m/%Y'),
+			10,
+			17925867);
+
+INSERT INTO BonsAchats(NumBon, DateEmis, MontantBon, IdCl)
+	VALUES (78512588,
+			STR_TO_DATE('09/01/2023', '%d/%m/%Y'),
+			10,
+			17925863);
+
+INSERT INTO BonsAchats(NumBon, DateEmis, MontantBon, IdCl, NumCmd)
+	VALUES (78512589,
+			STR_TO_DATE('02/12/2021', '%d/%m/%Y'),
+			10,
+			17925863,
+			14695374);
+
+INSERT INTO BonsAchats(NumBon, DateEmis, MontantBon, IdCl, NumCmd)
+	VALUES (78512590,
+			STR_TO_DATE('09/07/2022', '%d/%m/%Y'),
+			10,
+			17925867,
+			14695375);
+
+INSERT INTO Factures (NumFac, DateFac, NumCmd)
+	VALUES (10558739,
+			STR_TO_DATE('01/01/2023', '%d/%m/%Y'),
+			14695368);
+
+INSERT INTO Factures (NumFac, DateFac, NumCmd)
+	VALUES (10558740,
+			STR_TO_DATE('06/04/2020', '%d/%m/%Y'),
+			14695369);
+
+INSERT INTO Factures (NumFac, DateFac, NumCmd)
+	VALUES (10558741,
+			STR_TO_DATE('09/01/2023', '%d/%m/%Y'),
+			14695370);
+
+INSERT INTO Factures (NumFac, DateFac, NumCmd)
+	VALUES (10558742,
+			STR_TO_DATE('06/05/2019', '%d/%m/%Y'),
+			14695371);
+
+INSERT INTO Factures (NumFac, DateFac, NumCmd)
+	VALUES (10558742,
+			STR_TO_DATE('06/05/2019', '%d/%m/%Y'),
+			14695371);
+
+INSERT INTO Factures (NumFac, DateFac, NumCmd)
+	VALUES (10558743,
+			STR_TO_DATE('06/06/2015', '%d/%m/%Y'),
+			14695372);
+
+INSERT INTO Factures (NumFac, DateFac, NumCmd)
+	VALUES (10558744,
+			STR_TO_DATE('06/05/2019', '%d/%m/%Y'),
+			14695373);
+
+INSERT INTO Factures (NumFac, DateFac, NumCmd)
+	VALUES (10558745,
+			STR_TO_DATE('02/12/2021', '%d/%m/%Y'),
+			14695374);
+
+INSERT INTO Factures (NumFac, DateFac, NumCmd)
+	VALUES (10558746,
+			STR_TO_DATE('09/07/2022', '%d/%m/%Y'),
+			14695375);
