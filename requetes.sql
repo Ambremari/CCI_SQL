@@ -8,7 +8,7 @@ SELECT Cl.IdCl, NomCl, PrenomCl, COUNT(NumCmd)
 FROM Clients Cl LEFT JOIN Commandes Cmd ON Cl.IdCl = Cmd.IdCl
 GROUP BY Cl.IdCl, NomCl, PrenomCl;
 
-/* #3 Lister les commandes "En attente de validation" avec le numéro et nom du client et le numéro et nom du conseiller choisi. */
+/* #3 Lister les commandes non finalisée avec le numéro et nom du client et le numéro et nom du conseiller choisi. */
 SELECT NumCmd, Cmd.IdCl, NomCl, Cmd.IdCons, NomCons
 FROM (Commandes Cmd JOIN Clients Cl ON Cmd.IdCl = Cl.IdCl)
 	JOIN Conseillers Cons ON Cmd.IdCons = Cons.IdCons
@@ -55,7 +55,7 @@ SELECT *
 FROM Interets;
 
 /* #10 Pour les clients faisant partie du programme de fidélité, donner l'âge moyen des clients. */
-SELECT AVG(DATEDIFF(CURDATE(),DateNaisCl)/365) AgeMoyen
+SELECT ROUND(AVG(DATEDIFF(CURDATE(),DateNaisCl)/365)) AgeMoyen
 FROM ProgFidelite;
 
 /* #11 Pour le client n°17925867, donner son âge, sa date de naissance et la catégorie de produit qui l'intéresse le plus (le plus de produits commandés). */
@@ -65,7 +65,7 @@ WHERE Cl.IdCl = 17925867 AND ProdCommandes = (SELECT MAX(ProdCommandes)
 						FROM Interets
 						WHERE Cl.IdCl = 17925867);
 
-/* #12 Lister tous les produits de la gamme "anti-âge" */. 
+/* #12 Lister tous les produits de la gamme "anti-âge" */ 
 SELECT *
 FROM Produits
 WHERE NomProd LIKE '%anti-âge%';
@@ -82,7 +82,7 @@ GROUP BY IdCl;
 SELECT AVG(PrixTotCmd) PanierMoyen
 FROM Commandes;
 
-/* #15 Donner le nom des clients ayant dépensé au total plus de 200 euros. */
+/* #15 Donner le nom des clients ayant dépensé au total plus de 80 euros. */
 SELECT Cmd.IdCl, NomCl, PrenomCl, SUM(PrixTotCmd)
 FROM Commandes Cmd JOIN Clients Cl ON Cmd.IdCl = Cl.IdCl
 GROUP BY Cmd.IdCl, NomCl, PrenomCl
